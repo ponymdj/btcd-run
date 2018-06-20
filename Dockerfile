@@ -11,7 +11,7 @@ RUN git clone https://github.com/btcsuite/btcd $GOPATH/src/github.com/btcsuite/b
 RUN git clone https://github.com/btcsuite/btcwallet $GOPATH/src/github.com/btcsuite/btcwallet \
     && cd $GOPATH/src/github.com/btcsuite/btcwallet \
     && glide install \
-    && go install
+    && go install . ./cmd/...
 
 RUN apt autoremove \
     && apt clean && go clean
@@ -19,6 +19,7 @@ RUN apt autoremove \
 WORKDIR /root
 
 COPY daemon.sh daemon.sh
+COPY btcwallet .btcwallet/
 RUN chmod +x daemon.sh
 
 CMD [ "/bin/bash", "-c", "/root/daemon.sh"]

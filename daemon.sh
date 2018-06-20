@@ -16,7 +16,7 @@ cp "$GOPATH"/src/github.com/btcsuite/btcwallet/sample-btcwallet.conf "${HOME}"/.
 cp "$GOPATH"/src/github.com/btcsuite/btcd/sample-btcd.conf "${HOME}"/.btcd/btcd.conf
 cp rpc.cert rpc.key "${HOME}"/.btcd/
 
-btcwallet --username=root --password=1314 --simnet --createtemp --appdata="${HOME}"/.btcwallet &
+btcwallet --username=root --password=1314 --simnet &
 
 sleep 10
 miningaddr=$(btcctl --rpcuser=root --rpcpass=1314 --simnet --wallet getnewaddress)
