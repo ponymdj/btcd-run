@@ -8,7 +8,7 @@ set -o verbose
 PWD=$(cd "$(dirname "$0")" && pwd)
 export PATH="$PWD:$PATH"
 
-gencerts -f
+gencerts --host=btcd  -f
 
 mkdir -p "${HOME}"/.btcd "${HOME}"/.btcwallet
 cp rpc.cert rpc.key "${HOME}"/.btcwallet/
