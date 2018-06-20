@@ -26,4 +26,4 @@ echo "mingaddress: ${miningaddr}"
 btcctl --rpcuser=root --rpcpass=1314 --simnet --wallet listaccounts
 sleep 2
 
-btcd --simnet --rpcuser=root --rpcpass=1314 --miningaddr="${miningaddr}" --txindex
+btcd --simnet --rpcuser=root --rpcpass=1314 --rpclisten="0.0.0.0:18556" --miningaddr="${miningaddr}" --txindex
