@@ -19,7 +19,6 @@ RUN apt autoremove \
 WORKDIR /root
 
 COPY daemon.sh daemon.sh
-COPY btcwallet .btcwallet/
 RUN chmod +x daemon.sh
 
 CMD [ "/bin/bash", "-c", "/root/daemon.sh"]
